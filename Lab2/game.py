@@ -3,11 +3,11 @@ import time
 
 N = 10
 
-# tworzenie planszy
+
 def create_grid():
     return [[random.randint(0, 1) for _ in range(N)] for _ in range(N)]
 
-# wyświetlanie planszy
+
 def print_grid(grid):
     for row in grid:
         for cell in row:
@@ -15,7 +15,7 @@ def print_grid(grid):
         print()
     print("\n" * 2)
 
-# liczenie sąsiadów
+
 def count_neighbors(grid, i, j):
     neighbors = 0
     for x in range(i-1, i+2):
@@ -26,7 +26,7 @@ def count_neighbors(grid, i, j):
                 neighbors += grid[x][y]
     return neighbors
 
-# tworzenie następnej generacji
+
 def next_generation(grid):
     new_grid = [[0]*N for _ in range(N)]
 
@@ -43,7 +43,7 @@ def next_generation(grid):
 
     return new_grid
 
-# program główny
+
 grid = create_grid()
 
 while True:
